@@ -1,4 +1,7 @@
 import math
+fronm flask import Flask
+
+app = Flask (__name__)
 
 def suma(numUno, numDos):
     return numUno + numDos
