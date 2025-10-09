@@ -15,7 +15,7 @@ class Cola:
         return len(self.cola)==0
 
     def mostrar(self):
-        if not self.vacia():
+        if not self.vacio():
             return self.cola.pop(0)
     
 class Fila:
@@ -29,7 +29,7 @@ class Fila:
         return len(self.fila)==0
 
     def mostrar(self):
-        if not self.vacia():
+        if not self.vacio():
             return self.fila.pop(-1)
 
 def suma(numUno, numDos):
@@ -169,6 +169,6 @@ while True:
         case '11':
             print("Saliendo del programa.")
             print(f"Estos fueron tus resultados: {lista}")
-            # print(f"La fila es {fila.mostrar()}")
-            # print(f"La cola es {cola.mostrar()}")
+            print(f"La fila es {fila.mostrar()}")
+            print(f"La cola es {cola.mostrar()}")
             break
