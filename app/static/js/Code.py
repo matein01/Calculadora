@@ -1,8 +1,4 @@
 import math
-""" from flask import Flask
-
-app = Flask (__name__)
- """
 
 class Cola:
     def __init__(self):
@@ -87,7 +83,7 @@ while True:
     print("8. Coseno")
     print("9. Tangente")
     print("10. Logaritmo")
-    print("11. Salir")
+    print("11. Ver resultados")
     opcion = input("Ingrese su opcion (1-11): ")
     match opcion:
         case '1':
@@ -167,8 +163,50 @@ while True:
             cola.agregar(resultado)
             lista.append(resultado)
         case '11':
-            print("Saliendo del programa.")
-            print(f"Estos fueron tus resultados: {lista}")
-            print(f"La fila es {fila.mostrar()}")
-            print(f"La cola es {cola.mostrar()}")
+            while True:
+                print("Selecciona una estructura de datos")
+                print("1. Para la lista completa")
+                print("2. Para ver la fila (Ultimo valor)")
+                print("3. Para ver la cola (Primer valor valor)")
+                print("4. No ver resultados")
+                opcion = input("Ingrese su opcion (1-4): ")
+                match opcion:
+                  case '1':
+                        cantidad = len(lista)
+                        print(f"El total de resultados es: {cantidad}")
+                        print(f"La lista de todos los resultados es:")
+                        for i in range(0,cantidad):
+                            print(lista[i])
+                        print("Deseas eliminar algun resultado?")
+                        eliminar = input("1. Si 2. No: ")
+                        if eliminar == '1':
+                            print(f"Selecciona el numero que deseas eliminar (1-{cantidad}): ")
+                            numEliminar = int(input())
+                            numEliminar = numEliminar - 1
+                            eliminado = lista.pop(numEliminar)
+                            print(f"El resultado {eliminado} ha sido eliminado")
+                            print("La lista actualizada es:")
+                            cantidad = len(lista)
+                            for i in range(0,cantidad):
+                              print(lista[i])
+                  case '2':
+                        print(f"El ultimo resultado original es: {fila.mostrar()}")
+                        print("Deseas eliminar el resultado de la fila?")
+                        eliminar = input("1. Si 2. No: ")
+                        if eliminar == '1':
+                            eliminado = fila.mostrar()
+                            print(f"El resultado {eliminado} ha sido eliminado")
+                        print(f"El ultimo resultado actual es: {fila.mostrar()}")
+                  case '3':
+                        print(f"El primer resultado original es: {cola.mostrar()}")
+                        print("Deseas eliminar el resultado de la cola?")
+                        eliminar = input("1. Si 2. No: ")
+                        if eliminar == '1':
+                            eliminado = cola.mostrar()
+                            print(f"El resultado {eliminado} ha sido eliminado")
+                        print(f"El primer resultado actual es: {cola.mostrar()}")
+                  case '4':
+                        print("No se veran resultados")
+                        print("Saliendo...")
+                        break
             break
